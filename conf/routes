@@ -1,0 +1,21 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.index()
+
+POST    /generarRespuesta           controllers.GPTController.generarRespuesta(request: Request)
+
+POST    /generarRespuesta2          controllers.GPTController.generarRespuesta2()
+
+POST    /guardarDatos               controllers.GPTController.guardarDatos(request: Request)
+
+POST    /generarID                  controllers.GPTController.generarIDPubli()
+
+# POST    /sayHello                   controllers.GPTController.sayHello()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+# OPTIONS  /*path                     controllers.CorsController.preflight(path: String)
