@@ -20,16 +20,13 @@ public class GPTService {
     private final String apiKey;
 
     @Inject
-    public GPTService() {
-        this.apiKey = "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";
-    } //API SIN CREDITO
-    //public GPTService() {this.apiKey = "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"; } //API CON CREDITO
+    //public GPTService() {this.apiKey = "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";} //API_KEY SIN CREDITO
+    public GPTService() {this.apiKey = "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"; } //API_KEY CON CREDITO
     public String generarTexto(String prompt, int max_tokens) throws IOException {
         HttpClient httpClient = HttpClients.createDefault();
         HttpPost httpPost = new HttpPost("https://api.openai.com/v1/engines/davinci/completions");
         httpPost.addHeader("Authorization", "Bearer " + apiKey);
         httpPost.addHeader("Content-Type", "application/json");
-
         String jsonBody = Json.stringify(Json.newObject()
             .put("prompt", prompt)
         );
